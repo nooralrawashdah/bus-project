@@ -3,22 +3,24 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Ro0utes;
 
-class RoutesSeeder extends Seeder
+class RoutesSeeders extends Seeder
 {
+    /**
+     * Run the database seeds.
+     */
     public function run(): void
     {
         Routes::create([
             'route_name' => 'Amman to Zarqa',
             'Start_point' => 'Amman',
-            'End_point' => 'Zarqa'
+            'End_point' => 'Zarqa',
         ]);
 
         Routes::create([
             'route_name' => 'Irbid to Amman',
             'Start_point' => 'Irbid',
-            'End_point' => 'Amman'
+            'End_point' => 'Amman',
         ]);
     }
 }

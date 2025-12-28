@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
            $table->time('Start_time');
             $table->time('End_time');
+           // $table->unique(['Start_time', 'End_time']);
 
              $table->foreignId('bus_id')
               ->constrained('_bus')

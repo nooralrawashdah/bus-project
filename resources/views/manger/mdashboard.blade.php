@@ -1,3 +1,5 @@
+@extends('layouts.app')
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,7 +85,7 @@
             <!-- Main Content -->
             <div class="container-fluid p-4">
                 <h1 class="mt-4">Bus Management Dashboard</h1>
-             
+
                 <!-- Action Buttons -->
                 <div class="row mb-4">
                     <div class="col-md-3">
@@ -167,3 +169,4 @@
     </script>
 </body>
 </html>
+@endsection
