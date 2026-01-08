@@ -18,5 +18,9 @@ class Drivers extends Model
     {
         return $this->hasOne(Bus::class, 'driver_id');
     }
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'users_id');
+    }
 
 }
