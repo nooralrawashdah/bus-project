@@ -6,35 +6,49 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
-{
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
-
-    use AuthenticatesUsers;
-
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+{    public function showLoginForm()
     {
-        $this->middleware('guest')->except('logout');
-        $this->middleware('auth')->only('logout');
+        return view('auth.login');
+    }
+
+    // معالجة تسجيل الدخول
+    public function login(Request $request)
+    {
+        // 1. تحقق من البيانات
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:8',
+        ]);
+
+        // 2. حاول تسجيل الدخول
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            // 3. توجيه حسب نوع المستخدم
+            $user = Auth::user();
+
+            if ($user->user_type === 'driver') {
+                return redirect()->route('driver.dashboard');
+            } elseif ($user->user_type === 'admin') {
+                return redirect()->route('manger.mdashboard');
+            } else {
+                return redirect('users.userdashboard');
+            }
+        }
+
+        // 4. إذا فشل تسجيل الدخول
+        return back()->withErrors([
+            'email' => 'بيانات الدخول غير صحيحة.',
+        ])->onlyInput('email');
+    }
+
+    // تسجيل الخروج
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }

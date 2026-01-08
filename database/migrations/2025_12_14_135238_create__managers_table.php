@@ -11,10 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('_manaders', function (Blueprint $table) {
+        Schema::create('_managers', function (Blueprint $table) {
             $table->id();
-            $table-> string('M_Name');
 
+
+            $table->foreignId('users_id')
+                  ->constrained('users')
+                  ->unique()
+                  ->onDelete('cascade');
+
+            $table->timestamps();
         });
     }
 
