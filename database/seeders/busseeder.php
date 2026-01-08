@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Bus;
+use App\Models\Drivers;
 class BusSeeder extends Seeder
 {
     /**
@@ -12,8 +13,20 @@ class BusSeeder extends Seeder
      */
     public function run(): void
     {
-       Bus::create(['plat_number' => '20-12345', 'drivers_id' => 1]);
-        Bus::create(['plat_number' => '20-67890', 'drivers_id' => 2]); 
-        Bus::create(['plat_number' => '20-54321', 'drivers_id' => 3]); 
-    }
+       $drivers = Drivers::all(); 
+       $plateNumbers =
+        [ '20-12345', 
+        '20-67890', 
+        '20-54321', 
+        '20-98765',
+     ];
+  $i = 0; foreach ($drivers as $driver)
+   {
+     Bus::create([
+         'plat_number' => $plateNumbers[$i] ?? '20-' . rand(10000, 99999), 'drivers_id' => $drivers->id, ]); $i++;
+ }      
+
 }
+}
+
+

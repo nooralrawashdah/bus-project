@@ -16,10 +16,7 @@ return new class extends Migration
             $table->id();
             $table->tinyInteger('Seat_number')->unsigned();
      
-             
-             
-
-
+            $table->timestamps(); 
         });
     }
 

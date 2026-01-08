@@ -12,7 +12,7 @@ class SeatesSeeder extends Seeder
        for ($i = 1; $i <= 40; $i++)
     { 
         
-        Seat::create(['seat_number' => $i]);
+        Seates::create(['Seat_number' => $i]);
     
     }
     }

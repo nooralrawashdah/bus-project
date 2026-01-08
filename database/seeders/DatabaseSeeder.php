@@ -22,11 +22,11 @@ class DatabaseSeeder extends Seeder
          RoutesSeeders::class,
           DriversSeeder::class, 
           BusSeeder::class, 
-          SeatSeeder::class,
+          SeatesSeeder::class,
            TripsSeeder::class, 
            UsersSeeder::class,
-            Bookingseeder::class,
-             RoleSeeder::class, 
+            BookingSeeder::class,
+             
              LaratrustSeeder::class,
      ]);
     }
