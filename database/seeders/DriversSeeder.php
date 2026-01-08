@@ -9,16 +9,11 @@ class DriversSeeder extends Seeder
 {
     public function run(): void
     {
-        Drivers::create([
-            'Driver_Name' => 'Ali Hasan',
-            'Driver_Phone' => '0771234567',
-            'Driver_license_num' => 'A12345'
-        ]);
-
-        Drivers::create([
-            'Driver_Name' => 'Sara Khaled',
-            'Driver_Phone' => '0799876543',
-            'Driver_license_num' => 'B67890'
-        ]);
+       Driver::create(['driver_name' => 'Ahmad', 'driver_phone' => '0790000000', 'driver_license_num' => 'D12345']);
+        Driver::create(['driver_name' => 'Mohammad', 'driver_phone' => '0791111111', 'driver_license_num' => 'D67890']);
+        Driver::create(['driver_name' => 'Khaled', 'driver_phone' => '0792222222', 'driver_license_num' => 'D54321']); 
+       Driver::create(['driver_name' => 'Omar', 'driver_phone' => '0793333333', 'driver_license_num' => 'D98765']); 
+       Driver::create(['driver_name' => 'Yousef', 'driver_phone' => '0794444444', 'driver_license_num' => 'D11223']);
+    
     }
 }

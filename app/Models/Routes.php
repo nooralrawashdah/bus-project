@@ -13,7 +13,7 @@ class Routes extends Model
         'start_Point',
         'End_Point',
         'route_name',
-
+        'region_id',
     ];
 
 
@@ -24,6 +24,9 @@ class Routes extends Model
     return $this->hasMany(Trip::class); // مسار له عدة رحلات
 }
 
-
+public function region() 
+{ 
+    return $this->belongsTo(Region::class, 'regions_id'); 
+}
 
 }

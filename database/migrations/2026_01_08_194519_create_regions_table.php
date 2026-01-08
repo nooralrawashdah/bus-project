@@ -11,15 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('_seates', function (Blueprint $table)
-        {
+        Schema::create('regions', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('Seat_number')->unsigned();
-     
-             
-             
-
-
+            $table->string('region_name');
+            
+            $table->timestamps();
         });
     }
 
@@ -28,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('_seates');
+        Schema::dropIfExists('regions');
     }
 };

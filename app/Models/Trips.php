@@ -24,16 +24,13 @@ class Trips extends Model
     
     public function route()
  {
-    return $this->belongsTo(Route::class,'route_id'); // كل رحلة لها مسار واحد
+    return $this->belongsTo(Route::class,'routes_id'); // كل رحلة لها مسار واحد
  }
 
- public function scheduled()
- {
-    return $this->hasMany(Scheduled::class);
- }
 
 public function bookings()
-{ return $this->hasMany(Booking::class, 'trip_id');
+{ 
+    return $this->hasMany(Booking::class, 'trips_id');
  }
 
 }

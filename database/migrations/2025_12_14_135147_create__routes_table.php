@@ -16,7 +16,10 @@ return new class extends Migration
              $table->String('route_name');
              $table->String('Start_point');
             $table->String('End_point');
-       
+             $table->foreignId('region_id')
+             ->constrained('regions')
+             ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

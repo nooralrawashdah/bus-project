@@ -8,10 +8,8 @@ class Seates extends Model
  {  protected $table = '_seates';
       protected $fillable =      // هون الصفات الموجودة بالجدول
      [
-        'seat_id',
         'Seat_number',
-        'bus_id',
-
+       
     ];
 
 

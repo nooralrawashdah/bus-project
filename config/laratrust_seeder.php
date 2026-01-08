@@ -11,23 +11,25 @@ return [
      */
     'truncate_tables' => true,
 
-    'roles_structure' => [
-        'administrator' => [
+    'roles_structure' =>
+     [
+        'admin' => [
             'users' => 'c,r,u,d',
             'bus' => 'c,r,u,d',
             'trip' => 'c,r,u,d',
             'route' => 'c,r,u,d',
             'seat' => 'c,r,u,d',
+            
 
         ],
         'driver' => [
             'seat' => 'r',
-            'trip' => 'r',
+            'trip' => 'r,u',
             'route'=>'r'
         ],
 
         'student' => [
-            'booking' => 'c,r,,d',
+            'booking' => 'c,r,d',
              'trip' => 'r',
              'bus'=>'r',
              'route'=>'r',

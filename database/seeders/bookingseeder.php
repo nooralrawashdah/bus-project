@@ -11,15 +11,8 @@ class BookingSeeder extends Seeder
      */
     public function run(): void
     {
-        Booking::create([
-            'Date' => '2025-12-24',
-            'user_id' => 1,
-            'trip_id' => 1,
-        ]);
-        Booking::create([
-            'Date' => '2025-12-24',
-            'user_id' => 2,
-            'trip_id' => 1,
-        ]);
+        Booking::create(['date' => '2026-01-10', 'trip_id' => 1, 'user_id' => 2, 'bus_seat_id' => 1]); 
+        Booking::create(['date' => '2026-01-10', 'trip_id' => 2, 'user_id' => 2, 'bus_seat_id' => 2]); 
+        ABooking::create(['date' => '2026-01-11', 'trip_id' => 3, 'user_id' => 3, 'bus_seat_id' => 3]); 
     }
 }

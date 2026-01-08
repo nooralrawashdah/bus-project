@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('booking', function (Blueprint $table) {
             $table->id();
-            $table->date('Date');
+            $table->date('date');
             $table->foreignId('trip_id')
               ->constrained('trips')
               ->onDelete('cascade');
@@ -21,7 +21,15 @@ return new class extends Migration
              $table->foreignId('user_id')
               ->constrained('users')
               ->onDelete('cascade');
-            $table->timestamps();
+            
+
+               $table->foreignId('_bus_seat_id')
+              ->constrained('_bus_seat')
+                 ->onDelete('cascade');
+                 $table->unique(['trip_id', 'bus_seat_id']);  // انو ما يحجز نفس المقعد مرتين بنفس رحلة
+                 $table->unique(['trip_id', 'user_id']);     // انو ما يحجز مقعد ثاني باص ثاني لنفس رحلة
+             $table->timestamps();
+
         });
     }
 

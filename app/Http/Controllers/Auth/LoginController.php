@@ -38,6 +38,7 @@ class LoginController extends Controller
 
         // 4. إذا فشل تسجيل الدخول
         return back()->withErrors([
+
             'email' => 'بيانات الدخول غير صحيحة.',
         ])->onlyInput('email');
     }

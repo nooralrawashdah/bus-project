@@ -20,9 +20,10 @@ return new class extends Migration
               ->constrained('_bus')
               ->onDelete('cascade');
 
-               $table->foreignId('route_id')
+               $table->foreignId('routes_id')
               ->constrained('_routes')
               ->onDelete('cascade');
+              $table->unique(['bus_id', 'route_id', 'Start_time']);
               $table->timestamps();
         });
 

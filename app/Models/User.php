@@ -23,6 +23,9 @@ class User extends Authenticatable implements MustVerifyEmail, LaratrustUser
         'name',
         'email',
         'password',
+        'region_id',
+        'phone',
+        
     ];
     public function booking()
    {

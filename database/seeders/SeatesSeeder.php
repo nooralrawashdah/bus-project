@@ -9,16 +9,11 @@ class SeatesSeeder extends Seeder
 {
     public function run(): void
     {
-        for ($i = 1; $i <= 10; $i++) {
-            Seates::create([
-                'Seat_number' => $i,
-                'bus_id' => 1
-            ]);
-
-            Seates::create([
-                'Seat_number' => $i,
-                'bus_id' => 2
-            ]);
-        }
+       for ($i = 1; $i <= 40; $i++)
+    { 
+        
+        Seat::create(['seat_number' => $i]);
+    
+    }
     }
 }

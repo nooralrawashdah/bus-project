@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Booking extends Model
 {
-   protected $table ='_booking';
-   protected $filleable =
+   protected $table ='booking';
+   protected $fillable =
    [
-       'Date',
-       'Users_id',
-       'Trip_id',
-
+       'date',
+       'user_id',
+       'trip_id',
+       '_bus_seat_id',
 
    ];
 
@@ -23,5 +23,9 @@ class Booking extends Model
     public function trip()
     {
         return $this->belongsTo(Trip::class, 'trip_id');
+    }
+    public function bus_seat()
+    {
+        return $this->belongsTo(Bus_Seat::class, '_bus_seat_id');
     }
 }

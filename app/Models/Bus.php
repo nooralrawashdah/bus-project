@@ -17,22 +17,18 @@ class Bus extends Model
 
     public function seats()
 {
-    return $this->hasMany(Seat::class,'bus_id');
+    return $this->hasMany(Seat::class,'_bus_seat');
 }
 
 public function drivers()
 {
     return $this->belongsTo(Driver::class, 'driver_id');
 }
-public function trips()
+
+ public function trips()
     {
         return $this->hasMany(Trip::class, 'bus_id'); // الباص له أكثر من رحلة
     }
-
-public function scheduled()
-{
-    return $this->hasMany(Scheduled::class,'bus_id');
-}
 
 
 }

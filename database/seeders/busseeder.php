@@ -12,14 +12,8 @@ class BusSeeder extends Seeder
      */
     public function run(): void
     {
-         Bus::create([
-            'plat_number' => '123ABC',
-            'driver_id' => 1
-        ]);
-
-        Bus::create([
-            'plat_number' => '456DEF',
-            'driver_id' => 2
-        ]);
+       Bus::create(['plat_number' => '20-12345', 'driver_id' => 1]);
+        Bus::create(['plat_number' => '20-67890', 'driver_id' => 2]); 
+        Bus::create(['plat_number' => '20-54321', 'driver_id' => 3]); 
     }
 }

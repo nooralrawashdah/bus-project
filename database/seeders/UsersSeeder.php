@@ -9,11 +9,8 @@ class UsersSeeder extends Seeder
 {
     public function run(): void
     {
-        User::create([
-            'name' => 'Noor Hasan',
-            'email' => 'noor@gmail.com',
-            'password' => bcrypt('password123'),
-            'Address' => 'Amman'
-        ]);
-    }
+       User::create(['name' => 'Admin User', 'email' => 'admin@example.com', 'password' => bcrypt('password'), 'region_id' => 1]); 
+       User::create(['name' => 'Student User', 'email' => 'student@example.com', 'password' => bcrypt('password'), 'region_id' => 2]);
+        User::create(['name' => 'Driver User', 'email' => 'driver@example.com', 'password' => bcrypt('password'), 'region_id' => 3]);
+     }
 }

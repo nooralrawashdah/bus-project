@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('_managers', function (Blueprint $table) {
             $table->id();
 
-
+             $table->string('expert_year');
             $table->foreignId('users_id')
                   ->constrained('users')
                   ->unique()

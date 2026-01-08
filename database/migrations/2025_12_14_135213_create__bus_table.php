@@ -16,9 +16,11 @@ return new class extends Migration
             $table->id();
             $table->string('plat_number');
 
-            $table->foreignId('driver_id')
-                  ->constrained('_drivers')
-                  ->onDelete('cascade');
+            $table->foreignId('drivers_id')
+            ->unique()
+            ->constrained('_drivers')
+            ->onDelete('cascade');
+
 
             $table->timestamps();
         });

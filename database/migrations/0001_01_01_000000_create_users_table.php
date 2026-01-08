@@ -17,8 +17,14 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('Address');
+            //$table->string('Address');
+
             $table->string('Phone_number')->nullable();
+            
+            $table->foreignId('region_id')
+            ->nullable()
+             ->constrained('regions')
+            ->onDelete('set null'); //مشان اذا ما دخل العنوان تبعوا يصر قيمة فاضية مو ينحقف ريكورد كامل 
             $table->rememberToken();
             $table->timestamps();
         });

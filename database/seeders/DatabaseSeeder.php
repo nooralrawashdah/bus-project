@@ -16,22 +16,18 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        $this->call([
-            DriversSeeder::class,
-            busSeeder::class,
-            //routeSeeder::class,
-            tripSeeder::class,
-            seateSeeder::class,
-            scheduleSeeder::class,
-            userSeeder::class,
-            bookingSeeder::class,
-        ]);
-        // User::factory(10)->create();
-
-       // User::factory()->create([
-           // 'name' => 'Test User',
-            // 'email' => 'test@example.com',
-        // ]);
-$this->call(LaratrustSeeder::class);
+       $this->call([
+         RoleSeeder::class,  
+        RegionSeeder::class,
+         RouteSeeder::class,
+          DriverSeeder::class, 
+          BusSeeder::class, 
+          SeatSeeder::class,
+           TripSeeder::class, 
+           UserSeeder::class,
+            BookingSeeder::class,
+             RoleSeeder::class, 
+             LaratrustSeeder::class,
+     ]);
     }
 }
