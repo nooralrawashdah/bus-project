@@ -5,7 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\managercontroller;
 
-Auth::routes();
+//Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');

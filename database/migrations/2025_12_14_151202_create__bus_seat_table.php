@@ -18,7 +18,7 @@ return new class extends Migration
             $table->foreignId('seat_id')
                 ->constrained('_seates')
                 ->onDelete('cascade');
-          $table->primary(['bus_id', 'seat_id']);
+          $table->primary(['bus_id', 'seat_id',]);
 
         });
     }

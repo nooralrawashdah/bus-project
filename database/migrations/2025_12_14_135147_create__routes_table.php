@@ -16,7 +16,7 @@ return new class extends Migration
              $table->String('route_name');
              $table->String('Start_point');
             $table->String('End_point');
-
+       
             $table->timestamps();
         });
     }
