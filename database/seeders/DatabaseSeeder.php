@@ -19,13 +19,13 @@ class DatabaseSeeder extends Seeder
        $this->call([
          RoleSeeder::class,  
         RegionSeeder::class,
-         RouteSeeder::class,
-          DriverSeeder::class, 
+         RoutesSeeders::class,
+          DriversSeeder::class, 
           BusSeeder::class, 
           SeatSeeder::class,
-           TripSeeder::class, 
-           UserSeeder::class,
-            BookingSeeder::class,
+           TripsSeeder::class, 
+           UsersSeeder::class,
+            Bookingseeder::class,
              RoleSeeder::class, 
              LaratrustSeeder::class,
      ]);

@@ -26,7 +26,7 @@ return new class extends Migration
                $table->foreignId('_bus_seat_id')
               ->constrained('_bus_seat')
                  ->onDelete('cascade');
-                 $table->unique(['trip_id', 'bus_seat_id']);  // انو ما يحجز نفس المقعد مرتين بنفس رحلة
+                 $table->unique(['trip_id', '_bus_seat_id']);  // انو ما يحجز نفس المقعد مرتين بنفس رحلة
                  $table->unique(['trip_id', 'user_id']);     // انو ما يحجز مقعد ثاني باص ثاني لنفس رحلة
              $table->timestamps();
 
