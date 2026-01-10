@@ -12,6 +12,7 @@ use App\Models\Managers;
 
 use Illuminate\Http\Request;
 
+
 class RegisterController extends Controller
 {
     /*
@@ -54,7 +55,6 @@ class RegisterController extends Controller
         'name' => 'required|string|max:255',
         'email' => 'required|string|email|max:255|unique:users',
         'password' => 'required|string|min:8|confirmed',
-         'Address' => 'nullable|string|max:255',
     ]);
 
     // 2. أنشئ المستخدم
@@ -62,7 +62,8 @@ class RegisterController extends Controller
         'name' => $validated['name'],
         'email' => $validated['email'],
         'password' => \Illuminate\Support\Facades\Hash::make($validated['password']),
-        'Address' => $validated['Address'],
+        //'Address' => $validated['Address'],
+        'phone_number' => $validated['phone_number'],
     ]);
 
     $user->addRole('student');
